@@ -33,7 +33,8 @@ public class PathOfTheJedi {
     
 
    
-        Location location = new Location();
+     Location location = new Location();
+        System.out.println(location);
     }   
         
     
