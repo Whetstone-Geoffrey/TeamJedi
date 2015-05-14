@@ -116,6 +116,7 @@ public class Trainings {
 
     public void setUseHologram(String useHologram) {
         this.useHologram = useHologram;
+       
     }
         
         

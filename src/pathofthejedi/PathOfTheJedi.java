@@ -40,9 +40,19 @@ public class PathOfTheJedi {
      location.setItemsAvailable("Any Items Available");
      
         System.out.println(location);
-    }   
+       
 
-        Trainings trainings = new Trainings();
+        Trainings trainingsmenu = new Trainings();
+        
+        trainingsmenu.setLightSaberUse("Actions");
+        trainingsmenu.setForceAffinity("");
+        trainingsmenu.setForcePush("");
+        trainingsmenu.setReturnToShip("");
+        trainingsmenu.setUseHologram("");
+        trainingsmenu.setCombat("");
+                
+        System.out.println(trainingsmenu);
         
         
+    }    
 }
