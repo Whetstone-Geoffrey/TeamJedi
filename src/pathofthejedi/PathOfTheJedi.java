@@ -32,9 +32,14 @@ public class PathOfTheJedi {
      String gamemenu = gamemain.toString();
         System.out.println(gamemenu);
     
-
-   
+    
+    
+    
         Location location = new Location();
+     
+     location.setItemsAvailable("Any Items Available");
+     
+        System.out.println(location);
     }   
 
         Trainings trainings = new Trainings();
