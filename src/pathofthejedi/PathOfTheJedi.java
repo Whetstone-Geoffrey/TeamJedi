@@ -6,6 +6,7 @@
 package pathofthejedi;
 
 import byui.cit260.jedi.model.Game;
+import byui.cit260.jedi.model.Location;
 import byui.cit260.jedi.model.Trainings;
 
 /**
@@ -31,14 +32,12 @@ public class PathOfTheJedi {
      String gamemenu = gamemain.toString();
         System.out.println(gamemenu);
     
-        
-        Trainings traings = new Trainings();
-        
-        
-    }
 
+   
+        Location location = new Location();
+    }   
 
-    
-    
-    
+        Trainings trainings = new Trainings();
+        
+        
 }
