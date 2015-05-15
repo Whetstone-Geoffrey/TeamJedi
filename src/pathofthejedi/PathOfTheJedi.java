@@ -5,9 +5,13 @@
  */
 package pathofthejedi;
 
+import byui.cit260.jedi.model.Crystals;
 import byui.cit260.jedi.model.Game;
+import byui.cit260.jedi.model.Holograms;
 import byui.cit260.jedi.model.Location;
 import byui.cit260.jedi.model.Trainings;
+import byui.cit260.jedi.model.Workshop;
+import byui.cit260.jedi.model.Character;
 
 /**
  *
@@ -32,9 +36,7 @@ public class PathOfTheJedi {
      String gamemenu = gamemain.toString();
         System.out.println(gamemenu);
     
-    
-    
-    
+        
         Location location = new Location();
      
      location.setItemsAvailable("Any Items Available");
@@ -44,14 +46,46 @@ public class PathOfTheJedi {
 
         Trainings trainingsmenu = new Trainings();
         
-        trainingsmenu.setLightSaberUse("Actions");
-        trainingsmenu.setForceAffinity("");
-        trainingsmenu.setForcePush("");
-        trainingsmenu.setReturnToShip("");
-        trainingsmenu.setUseHologram("");
-        trainingsmenu.setCombat("");
+    trainingsmenu.setLightSaberUse("Actions");
+    trainingsmenu.setForceAffinity("");
+    trainingsmenu.setForcePush("");
+    trainingsmenu.setReturnToShip("");
+    trainingsmenu.setUseHologram("");
+    trainingsmenu.setCombat("");
                 
         System.out.println(trainingsmenu);
+        
+        Holograms hologrammenu = new Holograms();
+        
+    hologrammenu.setDualLightsaber("Dual");
+    hologrammenu.setForceChoke("Choke");
+    hologrammenu.setForceLightning("Lightning");
+    
+        System.out.println(hologrammenu);
+        
+        Workshop workshopmenu = new Workshop();
+        
+    workshopmenu.setLighsaberCrystal("Color");
+    workshopmenu.setLightsabeHilt("Metal");
+    workshopmenu.setReturnToShip("Return");
+        
+        System.out.println(workshopmenu);
+        
+        Crystals crystalmenu = new Crystals();
+    
+    crystalmenu.setBlue("Have");
+    crystalmenu.setGreen("Don't Have");
+    crystalmenu.setPurple("Have");
+    crystalmenu.setRed("Have");
+        
+        System.out.println(crystalmenu);
+        
+        Character charactermenu = new Character();
+        
+    charactermenu.setForceLevel(1);
+    
+        System.out.println("Level 1");
+        
         
         
     }    
