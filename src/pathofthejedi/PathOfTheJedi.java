@@ -12,6 +12,9 @@ import byui.cit260.jedi.model.Location;
 import byui.cit260.jedi.model.Trainings;
 import byui.cit260.jedi.model.Workshop;
 import byui.cit260.jedi.model.Character;
+import byui.cit260.jedi.model.inventoryList;
+import byui.cit260.jedi.model.player;
+import byui.cit260.jedi.model.ship;
 
 /**
  *
@@ -35,14 +38,14 @@ public class PathOfTheJedi {
      
      String gamemenu = gamemain.toString();
         System.out.println(gamemenu);
-    
+//------------------------------------------------------------------------------    
         
         Location location = new Location();
      
      location.setItemsAvailable("Any Items Available");
      
         System.out.println(location);
-       
+ //------------------------------------------------------------------------------      
 
         Trainings trainingsmenu = new Trainings();
         
@@ -54,7 +57,7 @@ public class PathOfTheJedi {
     trainingsmenu.setCombat("");
                 
         System.out.println(trainingsmenu);
-        
+//------------------------------------------------------------------------------        
         Holograms hologrammenu = new Holograms();
         
     hologrammenu.setDualLightsaber("Dual");
@@ -62,7 +65,7 @@ public class PathOfTheJedi {
     hologrammenu.setForceLightning("Lightning");
     
         System.out.println(hologrammenu);
-        
+ //------------------------------------------------------------------------------       
         Workshop workshopmenu = new Workshop();
         
     workshopmenu.setLighsaberCrystal("Color");
@@ -70,7 +73,7 @@ public class PathOfTheJedi {
     workshopmenu.setReturnToShip("Return");
         
         System.out.println(workshopmenu);
-        
+//------------------------------------------------------------------------------        
         Crystals crystalmenu = new Crystals();
     
     crystalmenu.setBlue("Have");
@@ -79,14 +82,32 @@ public class PathOfTheJedi {
     crystalmenu.setRed("Have");
         
         System.out.println(crystalmenu);
-        
+//------------------------------------------------------------------------------        
         Character charactermenu = new Character();
         
     charactermenu.setForceLevel(1);
     
         System.out.println("Level 1");
-        
-        
+//------------------------------------------------------------------------------        
+        ship shipmenu = new ship();
+            shipmenu.setAttribute("Set");
+            shipmenu.setContinueMission("Continue Mission");
+            shipmenu.setExitShip("Exiting Ship");
+            shipmenu.setWorkshop("Construct");
+            
+            System.out.println(shipmenu);
+//------------------------------------------------------------------------------
+        inventoryList inventoryListMenu = new inventoryList();
+            inventoryListMenu.setHologramTraining("Training");
+            inventoryListMenu.setMandalorianMetal("Have");
+            inventoryListMenu.setSynthCrystal("Have");
+            
+            System.out.println(inventoryListMenu);
+//------------------------------------------------------------------------------
+        player playerMenu = new player();
+            playerMenu.setName("Name");
+            
+            System.out.println(playerMenu);
         
     }    
 }
