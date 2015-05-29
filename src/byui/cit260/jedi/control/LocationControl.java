@@ -13,8 +13,8 @@ public class LocationControl {
   
     
     public double combatEnemy(double userHP, double enemyHP) {
-       
-        if(userHP >= enemyHP) { //userHP is more than enemy so user wins
+      
+        if(userHP > enemyHP) { //userHP is more than enemy so user wins
             double win = 1;
             return win;
         } 
