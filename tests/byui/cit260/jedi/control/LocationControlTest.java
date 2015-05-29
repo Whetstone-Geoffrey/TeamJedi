@@ -46,13 +46,12 @@ public class LocationControlTest {
         userHP = 50.0;
         enemyHP = 75.0;
    
-        expResult = 1.0;
+        expResult = -1.0;
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
-         /**********************
+        // TODO review the generated test code and remove the default call to fail.        
+         
+        /**********************
          * Test Case #3
          **********************/
         System.out.println("\tTest Case #3");
@@ -60,25 +59,23 @@ public class LocationControlTest {
         userHP = 0.0;
         enemyHP = 50.0;
    
-        expResult = 1.0;
+        expResult = -1.0;
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /**********************
          * Test Case #4
          **********************/
         System.out.println("\tTest Case #4");
         
-        userHP = -1.0;
+        userHP = 0.0;
         enemyHP = 15.0;
    
-        expResult = 1.0;
+        expResult = -1.0;
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /**********************
          * Test Case #5
@@ -88,11 +85,10 @@ public class LocationControlTest {
         userHP = 1.0;
         enemyHP = 99.0;
    
-        expResult = 1.0;
+        expResult = -1.0;
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /**********************
          * Test Case #6
@@ -106,7 +102,6 @@ public class LocationControlTest {
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /**********************
          * Test Case #7
@@ -120,7 +115,6 @@ public class LocationControlTest {
         result = instance.combatEnemy(userHP, enemyHP);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
