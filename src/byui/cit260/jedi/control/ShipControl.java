@@ -11,4 +11,27 @@ package byui.cit260.jedi.control;
  */
 public class ShipControl {
     
+    public double leaveLocation(double liqHydro, double tritium)  {
+    
+        if(tritium < (Math.floor(liqHydro * .333))) {
+            return -1;
+        }
+        
+        double tritiumRatio = Math.floor(liqHydro * .333);
+        
+        double total= tritiumRatio + liqHydro;
+        
+        if(total < 220) {
+            return -1;
+        }
+        
+        if(tritium <= 0) {
+            return -1;
+        }
+        
+        return total;
+        
+        
+}
+    
 }
