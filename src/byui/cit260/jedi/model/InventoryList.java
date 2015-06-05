@@ -11,13 +11,13 @@ import java.util.Objects;
  *
  * @author Moses
  */
-public class inventoryList {
+public class InventoryList {
     //class instance variables
     private String mandalorianMetal;
     private String synthCrystal;
     private String hologramTraining;
 
-    public inventoryList() {
+    public InventoryList() {
     }
 
     @Override
@@ -42,7 +42,7 @@ public class inventoryList {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final inventoryList other = (inventoryList) obj;
+        final InventoryList other = (InventoryList) obj;
         if (!Objects.equals(this.mandalorianMetal, other.mandalorianMetal)) {
             return false;
         }

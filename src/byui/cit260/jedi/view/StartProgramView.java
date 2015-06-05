@@ -5,6 +5,10 @@
  */
 package byui.cit260.jedi.view;
 
+import byui.cit260.jedi.control.ProgramControl;
+import byui.cit260.jedi.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author geoffreywhetstone
@@ -15,11 +19,14 @@ public class StartProgramView {
         
         this.displayBanner();
       
+        String playersName = this.getPlayersName();
         
+        Player player = ProgramControl.createPlayer(playersName);
         
+        this.displayWelcomeMessage(player);
         
-        
-        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
         
         
         /*startProgram(): void
@@ -35,7 +42,7 @@ public class StartProgramView {
     }
 
     private void displayBanner() {
-        System.out.println("\n\n*************************************************");
+        System.out.println("\n\n****************************************************");
     
         System.out.println( "*                                                  *"
                         + "\n*  Welcome to the Path of the Jedi Text Based RPG  *"
@@ -54,8 +61,38 @@ public class StartProgramView {
         System.out.println( "*                                                  *"
                         + "\n* Enjoy the Adventure and May the Force be with you*");
                 
-        System.out.println("*****************************************************");
+        System.out.println("****************************************************");
       
+        
+    }
+
+    private String getPlayersName() {
+        boolean valid = false;
+        String playersName = null;
+        Scanner keyboard = new Scanner(System.in);
+        
+        while(!valid) {
+            
+            System.out.println("Enter the player's name below:");
+            
+            playersName = keyboard.nextLine();
+            playersName = playersName.trim();
+            
+            if(playersName.length() < 2) {
+                System.out.println("Invalid name - the name must not be blank");
+                continue;
+            }
+            break;
+        }
+        
+        return playersName;
+    }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n============================================");
+        System.out.println("\tWelcome to Path of the Jedi " + player.getName());
+        System.out.println("\tMay the Force Be With You!");
+        System.out.println("============================================");
         
     }
     

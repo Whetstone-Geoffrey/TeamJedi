@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author Moses
  */
-public class player {
+public class Player {
     //class instance variables
     private String name;
 
-    public player() {
+    public Player() {
     }
 
     @Override
@@ -38,7 +38,7 @@ public class player {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final player other = (player) obj;
+        final Player other = (Player) obj;
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }

@@ -11,14 +11,14 @@ import java.util.Objects;
  *
  * @author Moses
  */
-public class ship {
+public class Ship {
     //class instance variables
     private String continueMission;
     private String exitShip;
     private String workshop;
     private String attribute;
 
-    public ship() {
+    public Ship() {
     }
 
     @Override
@@ -44,7 +44,7 @@ public class ship {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ship other = (ship) obj;
+        final Ship other = (Ship) obj;
         if (!Objects.equals(this.continueMission, other.continueMission)) {
             return false;
         }

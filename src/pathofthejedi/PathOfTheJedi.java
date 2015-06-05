@@ -12,9 +12,10 @@ import byui.cit260.jedi.model.Location;
 import byui.cit260.jedi.model.Trainings;
 import byui.cit260.jedi.model.Workshop;
 import byui.cit260.jedi.model.Character;
-import byui.cit260.jedi.model.inventoryList;
-import byui.cit260.jedi.model.player;
-import byui.cit260.jedi.model.ship;
+import byui.cit260.jedi.model.InventoryList;
+import byui.cit260.jedi.model.Player;
+import byui.cit260.jedi.model.Ship;
+import byui.cit260.jedi.view.StartProgramView;
 
 /**
  *
@@ -22,10 +23,34 @@ import byui.cit260.jedi.model.ship;
  */
 public class PathOfTheJedi {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        PathOfTheJedi.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        PathOfTheJedi.player = player;
+    }
+    private static Player player = null;
+    
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.startProgram();
+        
+        
+        
+        
+        
         Game gamemain = new Game();
         
      gamemain.setExploreCurrentLocation("Current");
@@ -89,7 +114,7 @@ public class PathOfTheJedi {
     
         System.out.println("Level 1");
 //------------------------------------------------------------------------------        
-        ship shipmenu = new ship();
+        Ship shipmenu = new Ship();
             shipmenu.setAttribute("Set");
             shipmenu.setContinueMission("Continue Mission");
             shipmenu.setExitShip("Exiting Ship");
@@ -97,14 +122,14 @@ public class PathOfTheJedi {
             
             System.out.println(shipmenu);
 //------------------------------------------------------------------------------
-        inventoryList inventoryListMenu = new inventoryList();
+        InventoryList inventoryListMenu = new InventoryList();
             inventoryListMenu.setHologramTraining("Training");
             inventoryListMenu.setMandalorianMetal("Have");
             inventoryListMenu.setSynthCrystal("Have");
             
             System.out.println(inventoryListMenu);
 //------------------------------------------------------------------------------
-        player playerMenu = new player();
+        Player playerMenu = new Player();
             playerMenu.setName("Name");
             
             System.out.println(playerMenu);
