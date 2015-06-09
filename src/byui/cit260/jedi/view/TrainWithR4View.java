@@ -25,7 +25,7 @@ public class TrainWithR4View {
             + "\n6 - Return to previous menu"
             + "\n---------------------------------------------";
         
-    public void displayMenu() {
+    public void displayTrainMenu() {
         
         char selection = ' ';
         do {
