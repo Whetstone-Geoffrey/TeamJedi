@@ -117,6 +117,9 @@ public class GameMenuView {
     }
 
     private void trainWithR4() {
+        
+        TrainWithR4View trainMenu = new TrainWithR4View();
+        trainMenu.displayTrainMenu();
     }
 
     private void saveGame() {
