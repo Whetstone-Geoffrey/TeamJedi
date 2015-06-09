@@ -104,7 +104,8 @@ public class MainMenuView {
     }
 
     private void newGame() {
-        System.out.println("*** newGame Function called ***"); 
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu(); 
     }
 
     private void howToPlayTheGame() {
