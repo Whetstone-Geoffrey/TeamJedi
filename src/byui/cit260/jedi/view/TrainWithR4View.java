@@ -89,23 +89,23 @@ public class TrainWithR4View {
     }
 
     private void lightSaberUse() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** Lightsaber Use Function called ***");
     }
 
     private void physicalCombat() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** Physical Combat Function called ***");
     }
 
     private void forcePush() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** Force Push Function called ***");
     }
 
     private void defensiveActions() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** Defensive Actions Function called ***");
     }
 
     private void forceAffinity() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** Force Affinity Function called ***");
     }
     
 }
