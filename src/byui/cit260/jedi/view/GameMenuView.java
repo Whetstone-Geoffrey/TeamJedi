@@ -99,21 +99,21 @@ public class GameMenuView {
     }
 
     private void exploreCurrentPlace() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** exploreCurrentPlace Function called ***");
 
     }
 
     private void findSomeoneToTalkTo() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** findSomeoneToTalkTo Function called ***");
 
     }
 
     private void viewItemsInInventory() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** viewItemsInInventory Function called ***");
     }
 
     private void viewCrewAndAllies() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** viewCrewAndAllies Function called ***");
     }
 
     private void trainWithR4() {
@@ -123,11 +123,11 @@ public class GameMenuView {
     }
 
     private void saveGame() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** saveGame Function called ***");
     }
 
     private void goBackToLastSavePoint() {
-        System.out.println("*** options Function called ***");
+        System.out.println("*** goBackToLastSavePoint Function called ***");
     }
   
     
