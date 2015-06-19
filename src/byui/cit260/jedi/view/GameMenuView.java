@@ -5,15 +5,14 @@
  */
 package byui.cit260.jedi.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author geoffreywhetstone
  */
-public class GameMenuView {
-
-       private final String MENU = "\n"
+public class GameMenuView extends View {
+    
+    public GameMenuView() {
+        super("\n"
             + "\n---------------------------------------------"
             + "\n| Game Menu                                 |"
             + "\n---------------------------------------------"
@@ -25,46 +24,16 @@ public class GameMenuView {
             + "\n6 - Save Game"
             + "\n7 - Go back to last Save Point"
             + "\n8 - Quit to Main Menu"
-            + "\n---------------------------------------------";
+            + "\n---------------------------------------------");
      
-
+}
     
-    public void displayMenu() {
-        char selection = ' ';
-                do {
-        
-                    System.out.println(MENU);
-        
-                    String input = this.getInput();
-                    selection = input.charAt(0);
-            
-                    this.doAction(selection);
-            
-                } while (selection != '8');
-            }
-
-    private String getInput() {
-        boolean valid = false;
-        String playerInput = null;
-        Scanner keyboard = new Scanner(System.in);
     
-        while(!valid) {
+    @Override
+    public boolean doAction(Object obj){
         
-            System.out.println("Enter the Key of the Menu Desired You Will");
-        
-            playerInput = keyboard.nextLine();
-            playerInput = playerInput.trim();
-        
-            if(playerInput.length() < 1) {
-            System.out.println("Invalid Input, Enter a number from 1 - 8");  
-            }
-            break;
-        
-        }
-            return playerInput;
-        }
-
-    private void doAction(char choice) {
+        String playerInput = (String) obj;          
+        char choice = playerInput.charAt(0);
         
         switch (choice) {
             case '1':
@@ -89,13 +58,13 @@ public class GameMenuView {
                 this.goBackToLastSavePoint();
                 break;
             case '8':
-                return;
+                this.display();
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
-        
+        return true;
     }
 
     private void exploreCurrentPlace() {
@@ -119,7 +88,7 @@ public class GameMenuView {
     private void trainWithR4() {
         
         TrainWithR4View trainMenu = new TrainWithR4View();
-        trainMenu.displayTrainMenu();
+        trainMenu.display();
     }
 
     private void saveGame() {
@@ -129,7 +98,6 @@ public class GameMenuView {
     private void goBackToLastSavePoint() {
         System.out.println("*** goBackToLastSavePoint Function called ***");
     }
-  
     
     
 }

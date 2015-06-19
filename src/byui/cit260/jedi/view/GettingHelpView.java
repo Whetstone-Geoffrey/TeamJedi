@@ -5,15 +5,14 @@
  */
 package byui.cit260.jedi.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author geoffreywhetstone
  */
-public class GettingHelpView {
+public class GettingHelpView extends View {
     
-    private final String MENU = "\n"
+    public GettingHelpView() {
+        super("\n"
             + "\n---------------------------------------------"
             + "\n| Getting Help                              |"
             + "\n---------------------------------------------"
@@ -23,47 +22,14 @@ public class GettingHelpView {
             + "\n4 - How the Ship Works"
             + "\n5 - Credits"
             + "\n6 - Previous Menu"
-            + "\n---------------------------------------------";
+            + "\n---------------------------------------------");
             
-    public void displayHelpMenu() {
-        
-        char selection = ' ';
-        do {
-        
-            System.out.println(MENU);
-        
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != '6');
-        
-    
-}
-
-    private String getInput() {
-    boolean valid = false;
-    String playerInput = null;
-    Scanner keyboard = new Scanner(System.in);
-    
-        while(!valid) {
-        
-            System.out.println("Enter the Key of the Menu Desired You Will");
-        
-            playerInput = keyboard.nextLine();
-            playerInput = playerInput.trim();
-        
-        if(playerInput.length() < 1) {
-            System.out.println("Invalid Input, Enter a number from 1 - 6");  
-        }
-        break;
-        
     }
-        return playerInput;
-    }
-
-    public void doAction(char choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        
+        String playerInput = (String) obj;      
+        char choice = playerInput.charAt(0);
         
         switch (choice) {
             case '1':
@@ -82,13 +48,14 @@ public class GettingHelpView {
                 this.credits();
             case '6':
                 //How to call the function from MainMenuView to return the the other menu
-                return;
+                this.display();
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
-        
+        return true;
+    
     }
 
     private void movement() {

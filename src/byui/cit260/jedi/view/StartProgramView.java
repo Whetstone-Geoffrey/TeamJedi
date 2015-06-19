@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author geoffreywhetstone
  */
-public class StartProgramView {
+public class StartProgramView  {
     
     public void startProgram() {
         
@@ -25,8 +25,8 @@ public class StartProgramView {
         
         this.displayWelcomeMessage(player);
         
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
         
         
         /*startProgram(): void
