@@ -5,7 +5,7 @@
  */
 package byui.cit260.jedi.view;
 
-import java.util.Scanner;
+import java.util.List;
 
 /**
  *
@@ -57,7 +57,7 @@ public class TrainWithR4View extends View {
                 break;
                     
         }
-            return true;
+            return false;
     }
 
     private void lightSaberUse() {
@@ -79,5 +79,7 @@ public class TrainWithR4View extends View {
     private void forceAffinity() {
         System.out.println("*** Force Affinity Function called ***");
     }
+
+
     
 }

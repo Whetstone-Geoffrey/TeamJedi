@@ -6,6 +6,7 @@
 package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.GameControl;
+import java.util.List;
 import pathofthejedi.PathOfTheJedi;
 
 /**
@@ -49,13 +50,13 @@ public class MainMenuView extends View {
             case '5':
                 this.display();
             case '6':
-                this.display();
+                System.exit(0);
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
-        return true;
+        return false;
     }
 
     private void loadGame() {
@@ -83,5 +84,6 @@ public class MainMenuView extends View {
     private void options() {
         System.out.println("*** options Function called ***");
     }
+
 
     }

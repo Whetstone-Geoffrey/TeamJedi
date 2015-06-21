@@ -5,6 +5,8 @@
  */
 package byui.cit260.jedi.view;
 
+import java.util.List;
+
 /**
  *
  * @author geoffreywhetstone
@@ -16,3 +18,4 @@ public interface ViewInterface {
     public boolean doAction(Object obj);
     
 }
+

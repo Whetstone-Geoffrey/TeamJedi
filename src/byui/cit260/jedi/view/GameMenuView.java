@@ -5,6 +5,8 @@
  */
 package byui.cit260.jedi.view;
 
+import java.util.List;
+
 /**
  *
  * @author geoffreywhetstone
@@ -67,9 +69,11 @@ public class GameMenuView extends View {
         return true;
     }
 
-    private void exploreCurrentPlace() {
-        System.out.println("*** exploreCurrentPlace Function called ***");
 
+    private void exploreCurrentPlace() {
+        
+       ExploreLocation explore = new ExploreLocation();
+       explore.display();
     }
 
     private void findSomeoneToTalkTo() {
@@ -82,7 +86,8 @@ public class GameMenuView extends View {
     }
 
     private void viewCrewAndAllies() {
-        System.out.println("*** viewCrewAndAllies Function called ***");
+        ViewCrewList crewlist = new ViewCrewList();
+        crewlist.display();
     }
 
     private void trainWithR4() {
@@ -98,6 +103,8 @@ public class GameMenuView extends View {
     private void goBackToLastSavePoint() {
         System.out.println("*** goBackToLastSavePoint Function called ***");
     }
-    
+
+  
     
 }
+

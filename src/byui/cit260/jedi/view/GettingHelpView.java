@@ -5,6 +5,8 @@
  */
 package byui.cit260.jedi.view;
 
+import java.util.List;
+
 /**
  *
  * @author geoffreywhetstone
@@ -54,7 +56,7 @@ public class GettingHelpView extends View {
                 break;
                     
         }
-        return true;
+        return false;
     
     }
 
@@ -77,6 +79,8 @@ public class GettingHelpView extends View {
     private void credits() {
         System.out.println("*** credits Function called ***"); 
     }
+
+
     
 }
 

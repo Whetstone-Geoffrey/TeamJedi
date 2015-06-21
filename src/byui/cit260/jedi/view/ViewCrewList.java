@@ -9,10 +9,10 @@ package byui.cit260.jedi.view;
  *
  * @author Moses
  */
-public class ViewCrewList {
+public class ViewCrewList extends View{
     
     public ViewCrewList() {
-            +("\n"
+            super("\n"
             + "\n---------------------------------------------"
             + "\n| Crew List                                 |"
             + "\n---------------------------------------------"
@@ -55,19 +55,16 @@ public class ViewCrewList {
     }
 
     private void R4() {
-        System.out.println("*** movement Function called ***");
+        System.out.println("*** R4 Function called ***");
     }
 
     private void Pilot() {
-        System.out.println("*** movement Function called ***");
+        System.out.println("*** Pilot Function called ***");
     }
 
     private void Ally() {
-        System.out.println("*** movement Function called ***");
+        System.out.println("*** Ally Function called ***");
     }
 
-    private void display() {
-        System.out.println("*** movement Function called ***");
-    }
     
 }
