@@ -5,7 +5,6 @@
  */
 package byui.cit260.jedi.control;
 
-import byui.cit260.jedi.model.Character;
 import byui.cit260.jedi.model.Game;
 import byui.cit260.jedi.model.InventoryList;
 import byui.cit260.jedi.model.Location;
