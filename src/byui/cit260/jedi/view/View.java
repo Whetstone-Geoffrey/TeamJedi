@@ -44,7 +44,7 @@ public abstract class View implements ViewInterface{
             playerInput = playerInput.trim();
         
             if(playerInput.length() < 1) {
-            System.out.println("Invalid Input, Enter a number from 1 - 8");  
+            System.out.println("Invalid Input, Enter a number from 1 - 9");  
             }
             break;
         

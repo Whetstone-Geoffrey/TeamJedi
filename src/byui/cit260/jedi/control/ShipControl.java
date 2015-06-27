@@ -9,10 +9,12 @@ package byui.cit260.jedi.control;
  *
  * @author geoffreywhetstone
  */
-public class ShipControl {
-    
-    public double leaveLocation(double liqHydro, double tritium)  {
-    
+public class ShipControl {   
+        
+    public double leaveLocation()  {
+        
+        double liqHydro = 220;
+        double tritium = 75;
         if(tritium < (Math.floor(liqHydro * .333))) {
             return -1;
         }
@@ -29,9 +31,13 @@ public class ShipControl {
             return -1;
         }
         
+        System.out.println("Congratulations, you have enough fuel to take off Required: 220 You have: " + total);
+
         return total;
         
         
+
 }
+    
     
 }

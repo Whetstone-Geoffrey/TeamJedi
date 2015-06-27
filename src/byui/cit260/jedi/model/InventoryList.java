@@ -16,7 +16,9 @@ public class InventoryList {
     private String mandalorianMetal;
     private String synthCrystal;
     private String hologramTraining;
-
+    private double tritium;
+    public double liqHydro;
+    
     public InventoryList() {
     }
 
@@ -91,6 +93,21 @@ public class InventoryList {
 
     public void setRequiredAmount(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public double getTritium() {
+        return tritium;
+    }
+
+    public void setTritium(double tritium) {
+        this.tritium = tritium;
+    }
+
+    public double getLiqHydro() {
+        return liqHydro;
+    }
+
+    public void setLiqHydro(double liqHydro) {
+        this.liqHydro = liqHydro;
     }
     
     

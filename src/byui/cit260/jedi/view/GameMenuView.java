@@ -21,9 +21,10 @@ public class GameMenuView extends View {
             + "\n3 - View Items in the Inventory"
             + "\n4 - View Crew or Allies"
             + "\n5 - Train with R4"
-            + "\n6 - Save Game"
-            + "\n7 - Go back to last Save Point"
-            + "\n8 - Quit to Main Menu"
+            + "\n6 - Go To Ship"
+            + "\n7 - Save Game"
+            + "\n8 - Go back to last Save Point"
+            + "\n9 - Quit to Main Menu"
             + "\n---------------------------------------------");
      
 }
@@ -52,12 +53,15 @@ public class GameMenuView extends View {
                 this.trainWithR4();
                 break;
             case '6':
-                this.saveGame();
+                this.goToShip();
                 break;
             case '7':
-                this.goBackToLastSavePoint();
+                this.saveGame();
                 break;
             case '8':
+                this.goBackToLastSavePoint();
+                break;
+            case '9':
                 this.display();
                 break;
             default:
@@ -94,6 +98,11 @@ public class GameMenuView extends View {
         TrainWithR4View trainMenu = new TrainWithR4View();
         trainMenu.display();
     }
+    
+    private void goToShip() {
+        ShipView ship = new ShipView();
+        ship.display();
+    }
 
     private void saveGame() {
         System.out.println("*** saveGame Function called ***");
@@ -102,6 +111,8 @@ public class GameMenuView extends View {
     private void goBackToLastSavePoint() {
         System.out.println("*** goBackToLastSavePoint Function called ***");
     }
+
+    
 
   
     
