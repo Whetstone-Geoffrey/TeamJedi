@@ -5,8 +5,6 @@
  */
 package byui.cit260.jedi.view;
 
-import java.util.List;
-
 /**
  *
  * @author geoffreywhetstone
@@ -61,12 +59,13 @@ public class GameMenuView extends View {
                 break;
             case '8':
                 this.display();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
-        return true;
+        return false;
     }
 
 

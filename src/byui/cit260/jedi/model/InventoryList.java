@@ -80,6 +80,18 @@ public class InventoryList {
     public void setHologramTraining(String hologramTraining) {
         this.hologramTraining = hologramTraining;
     }
+
+    public void setDescription(String mandalorian_Metal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setQunatityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

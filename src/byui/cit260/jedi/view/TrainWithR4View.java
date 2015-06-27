@@ -52,6 +52,7 @@ public class TrainWithR4View extends View {
                 break;
             case '6':
                 this.display();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;

@@ -108,11 +108,12 @@ public class PathOfTheJedi {
         
         System.out.println(crystalmenu);
 //------------------------------------------------------------------------------        
-        Character charactermenu = new Character();
+/*        Character charactermenu = new Character();
         
     charactermenu.setForceLevel(1);
     
         System.out.println("Level 1");
+*/
 //------------------------------------------------------------------------------        
         Ship shipmenu = new Ship();
             shipmenu.setAttribute("Set");

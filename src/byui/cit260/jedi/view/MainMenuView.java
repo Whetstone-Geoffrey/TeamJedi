@@ -49,8 +49,10 @@ public class MainMenuView extends View {
                 break;
             case '5':
                 this.display();
+                break;
             case '6':
                 System.exit(0);
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
@@ -68,6 +70,8 @@ public class MainMenuView extends View {
     }
 
     private void newGame() {
+        GameControl.createNewGame(PathOfTheJedi.getPlayer());
+        
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display(); 
     }

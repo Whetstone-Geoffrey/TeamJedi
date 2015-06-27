@@ -20,6 +20,11 @@ public class Game {
     private String reloadLastSave;
     private String exitGame;
     private String returnToShip;
+    private Player player;
+    private Location location;
+    public Character character;
+    private InventoryList inventory;
+    private Ship ship;
 
     @Override
     public String toString() {
@@ -135,5 +140,43 @@ public class Game {
         this.returnToShip = returnToShip;
     }
     
-    
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+        public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter() {
+        this.character = character;
+    }
+
+    public InventoryList getInventoryList() {
+        return inventory;
+    }
+
+    public void setInventoryList(InventoryList inventoryList) {
+        this.inventory = inventoryList;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
+
 }

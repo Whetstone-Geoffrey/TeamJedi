@@ -5,6 +5,7 @@
  */
 package byui.cit260.jedi.model;
 
+import java.awt.Point;
 import java.util.Objects;
 
 /**
@@ -53,8 +54,5 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
-    }
-    
-    
-    
+    }    
 }

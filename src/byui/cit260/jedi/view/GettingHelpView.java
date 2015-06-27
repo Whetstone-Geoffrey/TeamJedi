@@ -48,9 +48,11 @@ public class GettingHelpView extends View {
                 break;
             case '5':
                 this.credits();
+                break;
             case '6':
                 //How to call the function from MainMenuView to return the the other menu
                 this.display();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;

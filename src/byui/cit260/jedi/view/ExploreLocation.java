@@ -43,7 +43,7 @@ public class ExploreLocation extends View{
                 break;
                     
         }
-        return true;
+        return false;
     }
 
     

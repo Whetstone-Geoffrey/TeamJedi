@@ -19,8 +19,7 @@ public class ViewCrewList extends View{
             + "\n1 - R4"
             + "\n2 - Pilot"
             + "\n3 - Ally"
-            + "\n4 - Ally"
-            + "\n5 - Previous Menu"
+            + "\n4 - Previous Menu"
             + "\n---------------------------------------------");
     }
     @Override
@@ -40,17 +39,15 @@ public class ViewCrewList extends View{
                 this.Ally();
                 break;
             case '4':
-                this.Ally();
-                break;
-            case '6':
                 //How to call the function from MainMenuView to return the the other menu
                 this.display();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
-        return true;
+        return false;
     
     }
 
