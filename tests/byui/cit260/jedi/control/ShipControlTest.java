@@ -5,6 +5,7 @@
  */
 package byui.cit260.jedi.control;
 
+import byui.cit260.jedi.exceptions.ShipControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,9 +20,10 @@ public class ShipControlTest {
 
     /**
      * Test of leaveLocation method, of class ShipControl.
+     * @throws byui.cit260.jedi.exceptions.ShipControlException
      */
     @Test
-    public void testLeaveLocation() {
+    public void testLeaveLocation() throws ShipControlException {
         System.out.println("leaveLocation");
         
         /*********************
@@ -34,7 +36,7 @@ public class ShipControlTest {
         double tritium = 62.0;
         ShipControl instance = new ShipControl();
         double expResult = 246.0;
-        double result = instance.leaveLocation(liqHydro, tritium);
+        double result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -46,7 +48,7 @@ public class ShipControlTest {
         liqHydro = 50.0;
         tritium = 75.0;
         expResult = -1.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -58,7 +60,7 @@ public class ShipControlTest {
         liqHydro = 100.0;
         tritium = 0.0;
         expResult = -1.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -70,7 +72,7 @@ public class ShipControlTest {
         liqHydro = 75.0;
         tritium = 50.0;
         expResult = -1.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -82,7 +84,7 @@ public class ShipControlTest {
         liqHydro = 200.0;
         tritium = 100.0;
         expResult = 266.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -94,7 +96,7 @@ public class ShipControlTest {
         liqHydro = 190.0;
         tritium = 64.0;
         expResult = 253.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
         
         /*********************
@@ -106,7 +108,7 @@ public class ShipControlTest {
         liqHydro = 166.0;
         tritium = 55.0;
         expResult = 221.0;
-        result = instance.leaveLocation(liqHydro, tritium);
+        result = instance.leaveLocation();
         assertEquals(expResult, result, 0.0);
     }
     
