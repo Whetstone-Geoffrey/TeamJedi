@@ -44,8 +44,14 @@ public class PathOfTheJedi {
     
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        StartProgramView startProgramView = new StartProgramView(); 
+        try {
+            startProgramView.startProgram();
+
+        } catch(Throwable te) {
+               System.out.println(te.getMessage());
+               startProgramView.startProgram();
+        }
         
         
         

@@ -6,6 +6,9 @@
 package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.ShipControl;
+import byui.cit260.jedi.exceptions.ShipControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,7 +36,13 @@ class ShipView extends View{
         
         switch (choice) {
             case '1':
+        {
+            try {
                 this.leavelocation();
+            } catch (ShipControlException ex) {
+                Logger.getLogger(ShipView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             default:
                 this.display();
@@ -43,7 +52,7 @@ class ShipView extends View{
         return false;
     }
 
-    private void leavelocation() {
+    private void leavelocation() throws ShipControlException {
         ShipControl shipControl = new ShipControl();
         shipControl.leaveLocation(); 
     }
