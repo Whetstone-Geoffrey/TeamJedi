@@ -109,7 +109,9 @@ public class InventoryList {
     public void setLiqHydro(double liqHydro) {
         this.liqHydro = liqHydro;
     }
+
+   }
     
     
     
-}
+

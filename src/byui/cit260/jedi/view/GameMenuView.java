@@ -5,6 +5,8 @@
  */
 package byui.cit260.jedi.view;
 
+import byui.cit260.jedi.model.InventoryList;
+
 /**
  *
  * @author geoffreywhetstone
@@ -85,7 +87,7 @@ public class GameMenuView extends View {
     }
 
     private void viewItemsInInventory() {
-        System.out.println("*** viewItemsInInventory Function called ***");
+        InventoryList inventorylist = new InventoryList();
     }
 
     private void viewCrewAndAllies() {

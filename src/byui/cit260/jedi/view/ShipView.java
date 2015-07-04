@@ -5,7 +5,9 @@
  */
 package byui.cit260.jedi.view;
 
+import byui.cit260.jedi.control.InventoryControl;
 import byui.cit260.jedi.control.ShipControl;
+import byui.cit260.jedi.exceptions.InventoryControlException;
 import byui.cit260.jedi.exceptions.ShipControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +24,7 @@ class ShipView extends View{
             + "\n---------------------------------------------"
             + "\n Welcome to the Vendetta"
             + "\n Press 1 to leave current Location, Press"
+            + "\n 2 to create a lightsaber, Press"
             + "\n any other button to exit"
             + "\n---------------------------------------------");
      
@@ -43,6 +46,16 @@ class ShipView extends View{
                 Logger.getLogger(ShipView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        switch (choice) {
+            case '2':
+        {
+            try {
+                this.constructLightsaber();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(ShipView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        }
                 break;
             default:
                 this.display();
@@ -55,6 +68,11 @@ class ShipView extends View{
     private void leavelocation() throws ShipControlException {
         ShipControl shipControl = new ShipControl();
         shipControl.leaveLocation(); 
+    }
+
+    private void constructLightsaber() throws InventoryControlException {
+        InventoryControl inventoryControl = new InventoryControl();
+        inventoryControl.constructLightsaber();
     }
 
     

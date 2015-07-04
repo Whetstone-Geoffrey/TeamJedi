@@ -29,7 +29,7 @@ public class ShipControl {
         
         double tritiumRatio = Math.floor(liqHydro * .333);
         
-        double total= tritiumRatio + liqHydro;
+        double total = tritiumRatio + liqHydro;
         
         if(total < 220) {
             throw new ShipControlException("Cannot leave location because "
