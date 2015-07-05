@@ -5,6 +5,8 @@
  */
 package byui.cit260.jedi.control;
 
+import byui.cit260.jedi.exceptions.LocationControlException;
+
 /**
  *
  * @author geoffreywhetstone
@@ -12,15 +14,21 @@ package byui.cit260.jedi.control;
 public class LocationControl {
   
     
-    public double combatEnemy(double userHP, double enemyHP) {
-      
+    public double combatEnemy(double userHP, double enemyHP) 
+                    throws LocationControlException {
         if(userHP > enemyHP) { //userHP is more than enemy so user wins
-            double win = 1;
-            return win;
+            throw new LocationControlException("User cannot win because "
+                                            + "User has < Hit Points than Enemy "
+                                            + "and is required to have > Hit Points than Enemy ");
+            /*double win = 1;
+            return win;*/
         } 
         if(userHP < enemyHP) { //userHP is less than enemy so user loses
-            double lose = -1;
-            return lose;
+            throw new LocationControlException("Enemy cannot win because "
+                                            + "Enemy has < Hit Points than User "
+                                            + "and is required to have > Hit Points than User ");
+            /*double lose = -1;
+            return lose;*/
         }
         double currentHP = userHP;
         double totalHP = currentHP - enemyHP;
@@ -29,3 +37,4 @@ public class LocationControl {
             
     }
 }
+  
