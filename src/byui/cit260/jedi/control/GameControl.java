@@ -68,6 +68,19 @@ public class GameControl {
         }
         PathOfTheJedi.setCurrentGame(game);
         }
+    
+    public static void inventoryReport(Game game, String filepath)
+            throws GameControlException {
+        
+        try(FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+           
+            output.writeObject(game);
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
         
     
 

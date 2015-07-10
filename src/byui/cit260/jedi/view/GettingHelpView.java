@@ -5,6 +5,9 @@
  */
 package byui.cit260.jedi.view;
 
+import byui.cit260.jedi.control.GameControl;
+import pathofthejedi.PathOfTheJedi;
+
 /**
  *
  * @author geoffreywhetstone
@@ -47,6 +50,9 @@ public class GettingHelpView extends View {
             case '5':
                 this.credits();
                 break;
+            case '7':
+                this.inventoryReport();
+                break;
             case '6':
                 //How to call the function from MainMenuView to return the the other menu
                 this.display();
@@ -79,6 +85,19 @@ public class GettingHelpView extends View {
 
     private void credits() {
         this.console.println("*** credits Function called ***"); 
+    }
+
+    private void inventoryReport() {
+        
+        this.console.println("\n\nEnter the File Path for the report "
+                + "to be saved to."); 
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.inventoryReport(PathOfTheJedi.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GettingHelpView", ex.getMessage());
+        }
     }
 
 
