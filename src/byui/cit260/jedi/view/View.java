@@ -8,8 +8,6 @@ package byui.cit260.jedi.view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pathofthejedi.PathOfTheJedi;
 
 /**
@@ -58,7 +56,8 @@ public abstract class View implements ViewInterface{
             playerInput = playerInput.trim();
         
             if(playerInput.length() < 1) {
-            this.console.println("Invalid Input, Enter a number from 1 - 9");  
+            ErrorView.display("View",
+                    "Invalid Input, Enter a number from 1 - 9");  
             }
             break;
         

@@ -52,7 +52,8 @@ public class TrainWithR4View extends View {
                 this.display();
                 break;
             default:
-                 this.console.println("\n*** Invalid selection *** Try Again");
+                 ErrorView.display("TrainWithR4View",
+                         "*** Invalid selection *** Try Again");
                 break;
                     
         }

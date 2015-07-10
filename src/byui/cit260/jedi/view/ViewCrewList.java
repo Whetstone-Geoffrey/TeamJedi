@@ -43,7 +43,8 @@ public class ViewCrewList extends View{
                 this.display();
                 break;
             default:
-                 this.console.println("\n*** Invalid selection *** Try Again");
+                 ErrorView.display("ViewCrewList",
+                         "*** Invalid selection *** Try Again");
                 break;
                     
         }

@@ -6,7 +6,6 @@
 package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.GameControl;
-import java.util.List;
 import pathofthejedi.PathOfTheJedi;
 
 /**
@@ -54,7 +53,8 @@ public class MainMenuView extends View {
                 System.exit(0);
                 break;
             default:
-                 this.console.println("\n*** Invalid selection *** Try Again");
+                 ErrorView.display("MainMenuView",
+                         "*** Invalid selection *** Try Again");
                 break;
                     
         }

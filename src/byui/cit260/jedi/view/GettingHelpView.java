@@ -5,10 +5,6 @@
  */
 package byui.cit260.jedi.view;
 
-
-import java.util.List;
-import pathofthejedi.PathOfTheJedi;
-
 /**
  *
  * @author geoffreywhetstone
@@ -56,7 +52,8 @@ public class GettingHelpView extends View {
                 this.display();
                 break;
             default:
-                this.console.println("Error");                      
+                ErrorView.display("GettingHelpView",
+                         "*** Invalid selection *** Try Again");                      
                 break;
                     
         }

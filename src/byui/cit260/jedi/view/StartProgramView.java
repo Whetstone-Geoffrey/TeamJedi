@@ -85,13 +85,15 @@ public class StartProgramView  {
             playersName = playersName.trim();
             
             if(playersName.length() < 2) {
-                 this.console.println("Invalid name - the name must not be blank");
+                 ErrorView.display("StartProgramView",
+                         "*** Invalid Name *** Try Again");
                 continue;
             }
             break;
         }
     } catch (Exception e) {
-             this.console.println ("Error reading input:" + e.getMessage());
+             ErrorView.display("StartProgramView",
+                     "Error reading input:" + e.getMessage());
     }
         
         return playersName;

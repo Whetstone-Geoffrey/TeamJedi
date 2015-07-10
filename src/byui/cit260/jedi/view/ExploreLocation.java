@@ -39,7 +39,8 @@ public class ExploreLocation extends View{
                 this.explore();
                 break;
             default:
-                this.console.println("\n*** Invalid selection *** Try Again");
+                ErrorView.display("ExploreLocation",
+                         "*** Invalid selection *** Try Again");
                 break;
                     
         }
