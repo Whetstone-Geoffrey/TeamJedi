@@ -6,14 +6,20 @@
 package byui.cit260.jedi.control;
 
 import byui.cit260.jedi.exceptions.ShipControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
  * @author geoffreywhetstone
  */
 public class ShipControlTest {
+    
+    protected static final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected static final PrintWriter console = PathOfTheJedi.getOutFile();
     
     public ShipControlTest() {
     }
@@ -24,13 +30,13 @@ public class ShipControlTest {
      */
     @Test
     public void testLeaveLocation() throws ShipControlException {
-        System.out.println("leaveLocation");
+        console.println("leaveLocation");
         
         /*********************
          * Test Case #1
          *********************/
         
-        System.out.println("\tTest Case #1");
+        console.println("\tTest Case #1");
         
         double liqHydro = 185.0;
         double tritium = 62.0;
@@ -43,7 +49,7 @@ public class ShipControlTest {
          * Test Case #2
          *********************/
         
-        System.out.println("\tTest Case #2");
+        console.println("\tTest Case #2");
         
         liqHydro = 50.0;
         tritium = 75.0;
@@ -55,7 +61,7 @@ public class ShipControlTest {
          * Test Case #3
          *********************/
         
-        System.out.println("\tTest Case #3");
+        console.println("\tTest Case #3");
         
         liqHydro = 100.0;
         tritium = 0.0;
@@ -67,7 +73,7 @@ public class ShipControlTest {
          * Test Case #4
          *********************/
         
-        System.out.println("\tTest Case #4");
+        console.println("\tTest Case #4");
         
         liqHydro = 75.0;
         tritium = 50.0;
@@ -79,7 +85,7 @@ public class ShipControlTest {
          * Test Case #5
          *********************/
         
-        System.out.println("\tTest Case #5");
+        console.println("\tTest Case #5");
         
         liqHydro = 200.0;
         tritium = 100.0;
@@ -91,7 +97,7 @@ public class ShipControlTest {
          * Test Case #6
          *********************/
         
-        System.out.println("\tTest Case #6");
+        console.println("\tTest Case #6");
         
         liqHydro = 190.0;
         tritium = 64.0;
@@ -103,7 +109,7 @@ public class ShipControlTest {
          * Test Case #7
          *********************/
         
-        System.out.println("\tTest Case #7");
+        console.println("\tTest Case #7");
         
         liqHydro = 166.0;
         tritium = 55.0;

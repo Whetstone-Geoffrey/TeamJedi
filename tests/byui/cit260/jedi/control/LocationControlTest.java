@@ -6,14 +6,20 @@
 package byui.cit260.jedi.control;
 
 import byui.cit260.jedi.exceptions.LocationControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
  * @author geoffreywhetstone
  */
 public class LocationControlTest {
+    
+    protected static final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected static final PrintWriter console = PathOfTheJedi.getOutFile();
     
     public LocationControlTest() {
     }
@@ -23,12 +29,12 @@ public class LocationControlTest {
      */
     @Test
     public void testCombatEnemy() throws LocationControlException {
-        System.out.println("combatEnemy");
+        console.println("combatEnemy");
         
         /**********************
          * Test Case #1
          **********************/
-        System.out.println("\tTest Case #1");
+        console.println("\tTest Case #1");
         
         double userHP = 100.0;
         double enemyHP = 75.0;
@@ -42,7 +48,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #2
          **********************/
-        System.out.println("\tTest Case #2");
+        console.println("\tTest Case #2");
         
         userHP = 50.0;
         enemyHP = 75.0;
@@ -55,7 +61,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #3
          **********************/
-        System.out.println("\tTest Case #3");
+        console.println("\tTest Case #3");
         
         userHP = 0.0;
         enemyHP = 50.0;
@@ -68,7 +74,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #4
          **********************/
-        System.out.println("\tTest Case #4");
+        console.println("\tTest Case #4");
         
         userHP = 0.0;
         enemyHP = 15.0;
@@ -81,7 +87,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #5
          **********************/
-        System.out.println("\tTest Case #5");
+        console.println("\tTest Case #5");
         
         userHP = 1.0;
         enemyHP = 99.0;
@@ -94,7 +100,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #6
          **********************/
-        System.out.println("\tTest Case #6");
+        console.println("\tTest Case #6");
         
         userHP = 50.0;
         enemyHP = 1.0;
@@ -107,7 +113,7 @@ public class LocationControlTest {
         /**********************
          * Test Case #7
          **********************/
-        System.out.println("\tTest Case #7");
+        console.println("\tTest Case #7");
         
         userHP = 100.0;
         enemyHP = 99.0;

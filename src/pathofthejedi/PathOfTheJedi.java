@@ -20,8 +20,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -29,8 +27,8 @@ import java.util.logging.Logger;
  */
 public class PathOfTheJedi {
     
-    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
-    protected final PrintWriter console = PathOfTheJedi.getOutFile();
+    protected static final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected static final PrintWriter console = PathOfTheJedi.getOutFile();
 
     private static Game currentGame = null;
 
@@ -50,15 +48,16 @@ public class PathOfTheJedi {
         PathOfTheJedi.player = player;
     }
     private static Player player = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     public static void main(String[] args) {
         
         try{
             
-            PathOfTheJedi.inFile =
-                        new BufferedReader(new InputStreamReader(System.in));
+        PathOfTheJedi.inFile = new BufferedReader(new InputStreamReader(System.in));
             
-            PathOfTheJedi.outFile = new PrintWriter(System.out, true);
+        PathOfTheJedi.outFile = new PrintWriter(System.out, true);
         String filePath = "d:\\Users\\Moses\\Desktop\\CIT260 Java\\tmp\\log.txt";
         PathOfTheJedi.logFile = new PrintWriter(filePath);
         StartProgramView startProgramView = new StartProgramView(); 
@@ -66,7 +65,7 @@ public class PathOfTheJedi {
             startProgramView.startProgram();
 
         } catch(Throwable te) {
-               System.out.println(te.getMessage());
+               console.println(te.getMessage());
             
             
         }
@@ -80,8 +79,8 @@ public class PathOfTheJedi {
             
             if (PathOfTheJedi.logFile != null)
                 PathOfTheJedi.logFile.close();
-            } catch (IOException ex) {
-                System.out.println("Error closing files");
+            } catch (IOException e) {
+                console.println("Error closing files");
                 return;
             }
                 
@@ -101,14 +100,14 @@ public class PathOfTheJedi {
      
      
      String gamemenu = gamemain.toString();
-        System.out.println(gamemenu);
+        console.println(gamemenu);
 //------------------------------------------------------------------------------    
         
         Location location = new Location();
      
      location.setItemsAvailable("Any Items Available");
      
-        System.out.println(location);
+        console.println(location);
  //------------------------------------------------------------------------------      
 
         Trainings trainingsmenu = new Trainings();
@@ -120,7 +119,7 @@ public class PathOfTheJedi {
     trainingsmenu.setUseHologram("");
     trainingsmenu.setCombat("");
                 
-        System.out.println(trainingsmenu);
+        console.println(trainingsmenu);
 //------------------------------------------------------------------------------        
         Holograms hologrammenu = new Holograms();
         
@@ -128,7 +127,7 @@ public class PathOfTheJedi {
     hologrammenu.setForceChoke("Choke");
     hologrammenu.setForceLightning("Lightning");
     
-        System.out.println(hologrammenu);
+        console.println(hologrammenu);
  //------------------------------------------------------------------------------       
         Workshop workshopmenu = new Workshop();
         
@@ -136,7 +135,7 @@ public class PathOfTheJedi {
     workshopmenu.setLightsabeHilt("Metal");
     workshopmenu.setReturnToShip("Return");
         
-        System.out.println(workshopmenu);
+        console.println(workshopmenu);
 //------------------------------------------------------------------------------        
         Crystals crystalmenu = new Crystals();
     
@@ -145,13 +144,13 @@ public class PathOfTheJedi {
     crystalmenu.setPurple("Have");
     crystalmenu.setRed("Have");
         
-        System.out.println(crystalmenu);
+        console.println(crystalmenu);
 //------------------------------------------------------------------------------        
 /*        Character charactermenu = new Character();
         
     charactermenu.setForceLevel(1);
     
-        System.out.println("Level 1");
+        console.println("Level 1");
 */
 //------------------------------------------------------------------------------        
         Ship shipmenu = new Ship();
@@ -160,23 +159,21 @@ public class PathOfTheJedi {
             shipmenu.setExitShip("Exiting Ship");
             shipmenu.setWorkshop("Construct");
             
-            System.out.println(shipmenu);
+            console.println(shipmenu);
 //------------------------------------------------------------------------------
         InventoryList inventoryListMenu = new InventoryList();
             inventoryListMenu.setHologramTraining("Training");
             inventoryListMenu.setMandalorianMetal("Have");
             inventoryListMenu.setSynthCrystal("Have");
             
-            System.out.println(inventoryListMenu);
+            console.println(inventoryListMenu);
 //------------------------------------------------------------------------------
         Player playerMenu = new Player();
             playerMenu.setName("Name");
             
-            System.out.println(playerMenu);
+            console.println(playerMenu);
         
     } 
-    
-    private static PrintWriter outFile = null;
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -193,7 +190,6 @@ public class PathOfTheJedi {
     public static void setInFile(BufferedReader inFile) {
         PathOfTheJedi.inFile = inFile;
     }
-    private static BufferedReader inFile = null;
     
     private static PrintWriter logFile = null;
 
