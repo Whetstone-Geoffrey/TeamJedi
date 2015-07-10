@@ -5,7 +5,9 @@
  */
 package byui.cit260.jedi.view;
 
+import byui.cit260.jedi.control.GameControl;
 import byui.cit260.jedi.model.InventoryList;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
@@ -108,8 +110,18 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("*** saveGame Function called ***");
+        this.console.println("\n\nEnter the File Path for the game "
+                + "is to be saved."); 
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(PathOfTheJedi.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
     }
+    
+    
 
     private void goBackToLastSavePoint() {
         this.console.println("*** goBackToLastSavePoint Function called ***");

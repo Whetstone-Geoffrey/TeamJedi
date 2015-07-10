@@ -5,11 +5,17 @@
  */
 package byui.cit260.jedi.control;
 
+import byui.cit260.jedi.exceptions.GameControlException;
 import byui.cit260.jedi.model.Game;
 import byui.cit260.jedi.model.InventoryList;
 import byui.cit260.jedi.model.Location;
 import byui.cit260.jedi.model.Player;
 import byui.cit260.jedi.model.Ship;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import pathofthejedi.PathOfTheJedi;
 
 /**
@@ -37,9 +43,33 @@ public class GameControl {
         
 
     }
-    public static void loadGame(Player player) {
-        //this.console.println("\n loadGame stub function called ***");
+    
+    public static void saveGame(Game game, String filepath) 
+            throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch (IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
+    public static void loadGame(Game game, String filepath) 
+           throws GameControlException {
+        
+        try(FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream output = new ObjectInputStream(fips);
+           
+            game = (Game) output.readObject();
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        PathOfTheJedi.setCurrentGame(game);
+        }
+        
+    
 
     private static class Constants {
         private static int NUMBER_OF_INVENTORY_ITEMS;

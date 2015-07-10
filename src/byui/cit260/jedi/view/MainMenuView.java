@@ -63,7 +63,15 @@ public class MainMenuView extends View {
 
     private void loadGame() {
         
-        GameControl.loadGame(PathOfTheJedi.getPlayer());
+        this.console.println("\n\nEnter the File Path for the game "
+                + "is to be saved."); 
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.loadGame(PathOfTheJedi.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
