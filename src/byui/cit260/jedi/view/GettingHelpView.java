@@ -5,7 +5,9 @@
  */
 package byui.cit260.jedi.view;
 
+
 import java.util.List;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
@@ -54,7 +56,7 @@ public class GettingHelpView extends View {
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("Error");                      
                 break;
                     
         }
@@ -63,23 +65,23 @@ public class GettingHelpView extends View {
     }
 
     private void movement() {
-        System.out.println("*** movement Function called ***"); 
+        this.console.println("*** movement Function called ***"); 
     }
     
     private void goalOfTheGame() {
-        System.out.println("*** goalOfTheGame Function called ***"); 
+        this.console.println("*** goalOfTheGame Function called ***"); 
     }
 
     private void battleEvents() {
-        System.out.println("*** battleEvents Function called ***"); 
+        this.console.println("*** battleEvents Function called ***"); 
     }
 
     private void howTheShipWorks() {
-        System.out.println("*** howTheShipWorks Function called ***"); 
+        this.console.println("*** howTheShipWorks Function called ***"); 
     }
 
     private void credits() {
-        System.out.println("*** credits Function called ***"); 
+        this.console.println("*** credits Function called ***"); 
     }
 
 

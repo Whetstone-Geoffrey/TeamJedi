@@ -67,7 +67,7 @@ public class GameMenuView extends View {
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
@@ -82,7 +82,7 @@ public class GameMenuView extends View {
     }
 
     private void findSomeoneToTalkTo() {
-        System.out.println("*** findSomeoneToTalkTo Function called ***");
+        this.console.println("*** findSomeoneToTalkTo Function called ***");
 
     }
 
@@ -107,11 +107,11 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame Function called ***");
+        this.console.println("*** saveGame Function called ***");
     }
 
     private void goBackToLastSavePoint() {
-        System.out.println("*** goBackToLastSavePoint Function called ***");
+        this.console.println("*** goBackToLastSavePoint Function called ***");
     }
 
     

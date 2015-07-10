@@ -6,6 +6,9 @@
 package byui.cit260.jedi.control;
 
 import byui.cit260.jedi.exceptions.InventoryControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
@@ -17,6 +20,9 @@ public class InventoryControl {
     double synthCrystal = 4;
     double hologramTraining;
     String newLightsaber;
+    
+    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected final PrintWriter console = PathOfTheJedi.getOutFile();
     
     
     public String constructLightsaber() 
@@ -42,7 +48,7 @@ public class InventoryControl {
                                           + "and Mandalorian Metal = " + mandalorianMetal + ", " 
                                           + "required to have a minimum of 6 Total. ");
         }
-            System.out.println("Congratulations, You have created a new Lightsaber.");
+            this.console.println("Congratulations, You have created a new Lightsaber.");
         
             return newLightsaber;
             

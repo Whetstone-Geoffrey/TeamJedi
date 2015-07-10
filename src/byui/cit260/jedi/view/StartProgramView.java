@@ -7,13 +7,19 @@ package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.ProgramControl;
 import byui.cit260.jedi.model.Player;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import pathofthejedi.PathOfTheJedi;
+
 
 /**
  *
  * @author geoffreywhetstone
  */
 public class StartProgramView  {
+    
+    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected final PrintWriter console = PathOfTheJedi.getOutFile();
     
     public void startProgram() {
         
@@ -42,15 +48,15 @@ public class StartProgramView  {
     }
 
     private void displayBanner() {
-        System.out.println("\n\n****************************************************");
+         this.console.println("\n\n****************************************************");
     
-        System.out.println( "*                                                  *"
+         this.console.println( "*                                                  *"
                         + "\n*  Welcome to the Path of the Jedi Text Based RPG  *"
                         + "\n*  In this Game you will play as a Young Jedi      *"
                         + "\n*  Knight named Cale who is seeking revenge        *"
                         + "\n*  on the Sith for what they did to his Parents.   *");
                 
-        System.out.println( "*                                                  *"
+         this.console.println( "*                                                  *"
                         + "\n*  You will start by Training and learning the ways*"
                         + "\n*  of the force so Cale can seek out and find the  *"
                         + "\n*  Sith Lord that killed his family.  Exploring the*"
@@ -58,10 +64,10 @@ public class StartProgramView  {
                         + "\n*  Cale will find vengence or peace for the past.  *"
                         + "\n*                                                  *");
         
-        System.out.println( "*                                                  *"
+         this.console.println( "*                                                  *"
                         + "\n* Enjoy the Adventure and May the Force be with you*");
                 
-        System.out.println("****************************************************");
+         this.console.println("****************************************************");
       
         
     }
@@ -69,30 +75,33 @@ public class StartProgramView  {
     private String getPlayersName() {
         boolean valid = false;
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
-        
+        try {
+                
         while(!valid) {
             
-            System.out.println("Enter the player's name below:");
+             this.console.println("Enter the player's name below:");
             
-            playersName = keyboard.nextLine();
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
             
             if(playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
+                 this.console.println("Invalid name - the name must not be blank");
                 continue;
             }
             break;
         }
+    } catch (Exception e) {
+             this.console.println ("Error reading input:" + e.getMessage());
+    }
         
         return playersName;
     }
 
     private void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n============================================");
-        System.out.println("\tWelcome to Path of the Jedi " + player.getName());
-        System.out.println("\tMay the Force Be With You!");
-        System.out.println("============================================");
+         this.console.println("\n\n============================================");
+         this.console.println("\tWelcome to Path of the Jedi " + player.getName());
+         this.console.println("\tMay the Force Be With You!");
+         this.console.println("============================================");
         
     }
     

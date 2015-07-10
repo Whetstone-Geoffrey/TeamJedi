@@ -39,7 +39,7 @@ public class ExploreLocation extends View{
                 this.explore();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                this.console.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
@@ -62,7 +62,7 @@ public class ExploreLocation extends View{
  
 		ExploreLocation obj = new ExploreLocation();
 		for(int i = 0; i < 1; i++){
-			System.out.println(obj.getRandomList(list));
+			this.console.println(obj.getRandomList(list));
 		}
  
 	}
@@ -71,7 +71,7 @@ public class ExploreLocation extends View{
  
 	    //0-4
 	    int index = random.nextInt(list.size());
-	    System.out.println("\nYou Found :" + index );
+	    this.console.println("\nYou Found :" + index );
 	    return list.get(index);
  
 	}

@@ -6,12 +6,18 @@
 package byui.cit260.jedi.control;
 
 import byui.cit260.jedi.exceptions.ShipControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
  * @author geoffreywhetstone
  */
 public class ShipControl {   
+    
+    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected final PrintWriter console = PathOfTheJedi.getOutFile();
         
     public double leaveLocation()  
                 throws ShipControlException {
@@ -47,7 +53,7 @@ public class ShipControl {
             //return -1;
         }
         
-        System.out.println("Congratulations, you have enough fuel to take off Required: 220 You have: " + total);
+        this.console.println("Congratulations, you have enough fuel to take off Required: 220 You have: " + total);
 
         return total;
         

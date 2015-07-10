@@ -5,6 +5,7 @@
  */
 package byui.cit260.jedi.control;
 
+import byui.cit260.jedi.exceptions.LocationControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class LocationControlTest {
      * Test of combatEnemy method, of class LocationControl.
      */
     @Test
-    public void testCombatEnemy() {
+    public void testCombatEnemy() throws LocationControlException {
         System.out.println("combatEnemy");
         
         /**********************

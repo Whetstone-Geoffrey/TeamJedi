@@ -52,7 +52,7 @@ public class TrainWithR4View extends View {
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                 this.console.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
@@ -60,23 +60,23 @@ public class TrainWithR4View extends View {
     }
 
     private void lightSaberUse() {
-        System.out.println("*** Lightsaber Use Function called ***");
+         this.console.println("*** Lightsaber Use Function called ***");
     }
 
     private void physicalCombat() {
-        System.out.println("*** Physical Combat Function called ***");
+         this.console.println("*** Physical Combat Function called ***");
     }
 
     private void forcePush() {
-        System.out.println("*** Force Push Function called ***");
+         this.console.println("*** Force Push Function called ***");
     }
 
     private void defensiveActions() {
-        System.out.println("*** Defensive Actions Function called ***");
+         this.console.println("*** Defensive Actions Function called ***");
     }
 
     private void forceAffinity() {
-        System.out.println("*** Force Affinity Function called ***");
+         this.console.println("*** Force Affinity Function called ***");
     }
 
 

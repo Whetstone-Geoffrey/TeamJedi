@@ -38,7 +38,7 @@ public class GameControl {
 
     }
     public static void loadGame(Player player) {
-        System.out.println("\n loadGame stub function called ***");
+        //this.console.println("\n loadGame stub function called ***");
     }
 
     private static class Constants {

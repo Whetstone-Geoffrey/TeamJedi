@@ -16,12 +16,21 @@ import byui.cit260.jedi.model.InventoryList;
 import byui.cit260.jedi.model.Player;
 import byui.cit260.jedi.model.Ship;
 import byui.cit260.jedi.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author geoffreywhetstone
  */
 public class PathOfTheJedi {
+    
+    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected final PrintWriter console = PathOfTheJedi.getOutFile();
 
     private static Game currentGame = null;
 
@@ -44,17 +53,41 @@ public class PathOfTheJedi {
     
     public static void main(String[] args) {
         
+        try{
+            
+            PathOfTheJedi.inFile =
+                        new BufferedReader(new InputStreamReader(System.in));
+            
+            PathOfTheJedi.outFile = new PrintWriter(System.out, true);
+        String filePath = "d:\\Users\\Moses\\Desktop\\CIT260 Java\\tmp\\log.txt";
+        PathOfTheJedi.logFile = new PrintWriter(filePath);
         StartProgramView startProgramView = new StartProgramView(); 
-        try {
+        
             startProgramView.startProgram();
 
         } catch(Throwable te) {
                System.out.println(te.getMessage());
-               startProgramView.startProgram();
+            
+            
         }
-        
-        
-        
+        finally {
+            try {
+            if (PathOfTheJedi.inFile != null)
+                PathOfTheJedi.inFile.close();
+                
+            if (PathOfTheJedi.outFile != null)
+                PathOfTheJedi.outFile.close();
+            
+            if (PathOfTheJedi.logFile != null)
+                PathOfTheJedi.logFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+                
+        }   
+    
+             
         
         
         Game gamemain = new Game();
@@ -141,5 +174,34 @@ public class PathOfTheJedi {
             
             System.out.println(playerMenu);
         
-    }    
+    } 
+    
+    private static PrintWriter outFile = null;
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        PathOfTheJedi.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        PathOfTheJedi.inFile = inFile;
+    }
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        PathOfTheJedi.logFile = logFile;
+    }
 }

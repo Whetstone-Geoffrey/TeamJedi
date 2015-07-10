@@ -54,7 +54,7 @@ public class MainMenuView extends View {
                 System.exit(0);
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                 this.console.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
@@ -86,7 +86,7 @@ public class MainMenuView extends View {
     }
 
     private void options() {
-        System.out.println("*** options Function called ***");
+         this.console.println("*** options Function called ***");
     }
 
 

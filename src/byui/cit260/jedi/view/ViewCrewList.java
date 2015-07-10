@@ -43,7 +43,7 @@ public class ViewCrewList extends View{
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try Again");
+                 this.console.println("\n*** Invalid selection *** Try Again");
                 break;
                     
         }
@@ -52,15 +52,15 @@ public class ViewCrewList extends View{
     }
 
     private void R4() {
-        System.out.println("*** R4 Function called ***");
+         this.console.println("*** R4 Function called ***");
     }
 
     private void Pilot() {
-        System.out.println("*** Pilot Function called ***");
+         this.console.println("*** Pilot Function called ***");
     }
 
     private void Ally() {
-        System.out.println("*** Ally Function called ***");
+         this.console.println("*** Ally Function called ***");
     }
 
     

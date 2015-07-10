@@ -5,7 +5,12 @@
  */
 package byui.cit260.jedi.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pathofthejedi.PathOfTheJedi;
 
 /**
  *
@@ -14,6 +19,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface{
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
+    protected final PrintWriter console = PathOfTheJedi.getOutFile();
 
    public View(String promptMessage)  {
        this.promptMessage = promptMessage;
@@ -25,26 +33,32 @@ public abstract class View implements ViewInterface{
         boolean done = false;
                 
         do {
-                System.out.println(this.promptMessage);
+                this.console.println(this.promptMessage);
                 playerInput = this.getInput();
                 done = this.doAction(playerInput);
                 } while (!done);
             }
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
+        
         boolean valid = false;
         String playerInput = null;
     
         while(!valid) {
         
-            System.out.println("Enter the Key of the Menu Desired You Will");
+            this.console.println("Enter the Key of the Menu Desired You Will");
         
-            playerInput = keyboard.nextLine();
+            try {
+                playerInput = this.keyboard.readLine();
+            } catch (IOException e) {
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading input: " + e.getMessage());
+                return null;
+            }
             playerInput = playerInput.trim();
         
             if(playerInput.length() < 1) {
-            System.out.println("Invalid Input, Enter a number from 1 - 9");  
+            this.console.println("Invalid Input, Enter a number from 1 - 9");  
             }
             break;
         
