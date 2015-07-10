@@ -57,7 +57,7 @@ public class MainMenuView extends View {
                          "*** Invalid selection *** Try Again");
                 break;           
         }
-        return false;
+      return false;  
     }
     
 
