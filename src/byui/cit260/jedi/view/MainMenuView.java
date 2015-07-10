@@ -55,11 +55,11 @@ public class MainMenuView extends View {
             default:
                  ErrorView.display("MainMenuView",
                          "*** Invalid selection *** Try Again");
-                break;
-                    
+                break;           
         }
         return false;
     }
+    
 
     private void loadGame() {
         
