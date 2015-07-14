@@ -66,7 +66,7 @@ public class GameMenuView extends View {
                 this.goBackToLastSavePoint();
                 break;
             case '9':
-                this.display();
+                this.returnToPrevious();
                 break;
             default:
                 ErrorView.display("GameMenuVeiw",
@@ -85,8 +85,8 @@ public class GameMenuView extends View {
     }
 
     private void findSomeoneToTalkTo() {
-        this.console.println("*** findSomeoneToTalkTo Function called ***");
-
+        FindSomeoneToTalkTo talk = new FindSomeoneToTalkTo();
+        talk.display();
     }
 
     private void viewItemsInInventory() {
@@ -136,6 +136,11 @@ public class GameMenuView extends View {
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+    }
+
+    private void returnToPrevious() {
+        MainMenuView mainView = new MainMenuView();
+        mainView.display();
     }
 
     

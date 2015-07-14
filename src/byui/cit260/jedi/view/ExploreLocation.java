@@ -23,7 +23,7 @@ public class ExploreLocation extends View{
             + "\n---------------------------------------------"
             + "\n You are Exploring the Location "
             + "\n Press 1 to continue"
-            + "\n Press 2 to return to the the Main Menu"
+            + "\n Press 2 to return to the the Game Menu"
             + "\n---------------------------------------------");
      
 }

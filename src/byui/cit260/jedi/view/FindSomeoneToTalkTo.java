@@ -22,7 +22,7 @@ public class FindSomeoneToTalkTo extends View{
             + "\n---------------------------------------------"
             + "\n You are looking for someone to speak with "
             + "\n Press 1 to continue"
-            + "\n Press 2 to return to the the Main Menu"
+            + "\n Press 2 to return to the the Game Menu"
             + "\n---------------------------------------------");
      
 }
