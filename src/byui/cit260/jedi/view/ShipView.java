@@ -58,7 +58,7 @@ class ShipView extends View{
         }
                 break;
             default:
-                this.display();
+                this.returnToPrevious();
                 break;
                     
         }
@@ -73,6 +73,11 @@ class ShipView extends View{
     private void constructLightsaber() throws InventoryControlException {
         InventoryControl inventoryControl = new InventoryControl();
         inventoryControl.constructLightsaber();
+    }
+
+    private void returnToPrevious() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     

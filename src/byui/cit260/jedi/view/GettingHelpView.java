@@ -55,7 +55,7 @@ public class GettingHelpView extends View {
                 break;
             case '6':
                 //How to call the function from MainMenuView to return the the other menu
-                this.display();
+                this.returnToPrevious();
                 break;
             default:
                 ErrorView.display("GettingHelpView",
@@ -98,6 +98,12 @@ public class GettingHelpView extends View {
         } catch (Exception ex) {
             ErrorView.display("GettingHelpView", ex.getMessage());
         }
+    }
+
+    private void returnToPrevious() {
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
     }
 
 

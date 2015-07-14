@@ -36,6 +36,7 @@ public abstract class View implements ViewInterface{
                 done = this.doAction(playerInput);
                 } while (!done);
             }
+    
     @Override
     public String getInput() {
         

@@ -13,23 +13,21 @@ import java.util.Random;
  *
  * @author geoffreywhetstone
  */
-public class ExploreLocation extends View{
-
-       
-    public ExploreLocation()  {
+public class FindSomeoneToTalkTo extends View{
+    
+    public FindSomeoneToTalkTo()  {
         super("\n"
             + "\n---------------------------------------------"
-            + "\n| Explore Location                          |"
+            + "\n| Find Someone To Talk To                   |"
             + "\n---------------------------------------------"
-            + "\n You are Exploring the Location "
+            + "\n You are looking for someone to speak with "
             + "\n Press 1 to continue"
             + "\n Press 2 to return to the the Main Menu"
             + "\n---------------------------------------------");
      
 }
-        
- 
-         @Override
+    
+    @Override
     public boolean doAction(Object obj){
         
         String playerInput = (String) obj;          
@@ -43,27 +41,26 @@ public class ExploreLocation extends View{
                 this.returnToPrevious();
                 break;
             default:
-                ErrorView.display("ExploreLocation",
+                ErrorView.display("FindSomoneToTalkTo",
                          "*** Invalid selection *** Try Again");
                 break;
                     
         }
         return false;
     }
-
     
-    public final Random random = new Random();
+public final Random random = new Random();
 
     private void explore() {
     
          
  
 		List<String> list = new ArrayList<>();
-		list.add("Mandalorian Metal");
-		list.add("Synth Crystal: Red");
-		list.add("Synth Crystal: Blue");
-		list.add("Synth Crystal: Green");
-		list.add("Hologram Training: Force Push");
+		list.add("Citizen: You dont look like you're from here, What could I help you with?");
+		list.add("Sith: You Jedi Scum! Leave This planet OR else!");
+		list.add("Moisture Farmer: We don't see your kind around here too often Master Jedi.");
+		list.add("Trader: What can I do ya for?");
+		list.add("Cantina Barman: I've got drinks or information, anything else don't bother asking.");
  
 		ExploreLocation obj = new ExploreLocation();
 		for(int i = 0; i < 1; i++){
@@ -76,7 +73,7 @@ public class ExploreLocation extends View{
  
 	    //0-4
 	    int index = random.nextInt(list.size());
-	    this.console.println("\nYou Found :" + index );
+	    this.console.println("\nYou found a :" + index );
 	    return list.get(index);
  
 	}
@@ -85,12 +82,4 @@ public class ExploreLocation extends View{
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
-    }
-    
-    
-
-
-  
-  
- 
-
+}

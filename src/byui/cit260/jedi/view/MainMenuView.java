@@ -47,7 +47,7 @@ public class MainMenuView extends View {
                 this.options();
                 break;
             case '5':
-                this.display();
+                this.returnToPrevious();
                 break;
             case '6':
                 System.exit(0);
@@ -64,7 +64,7 @@ public class MainMenuView extends View {
     private void loadGame() {
         
         this.console.println("\n\nEnter the File Path for the game "
-                + "is to be saved."); 
+                + "that is to be loaded."); 
         String filePath = this.getInput();
         
         try {
@@ -87,14 +87,17 @@ public class MainMenuView extends View {
     private void howToPlayTheGame() {
         
         GettingHelpView helpMenuView = new GettingHelpView();
-        helpMenuView.display();
-        
-        
+        helpMenuView.display();  
         
     }
 
     private void options() {
          this.console.println("*** options Function called ***");
+    }
+
+    private void returnToPrevious() {
+        StartProgramView startMenu = new StartProgramView();
+        startMenu.startProgram();
     }
 
 

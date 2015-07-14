@@ -40,7 +40,7 @@ public class ViewCrewList extends View{
                 break;
             case '4':
                 //How to call the function from MainMenuView to return the the other menu
-                this.display();
+                this.returnToPrevious();
                 break;
             default:
                  ErrorView.display("ViewCrewList",
@@ -62,6 +62,11 @@ public class ViewCrewList extends View{
 
     private void Ally() {
          this.console.println("*** Ally Function called ***");
+    }
+
+    private void returnToPrevious() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     

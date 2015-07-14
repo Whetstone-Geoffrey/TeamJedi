@@ -124,7 +124,18 @@ public class GameMenuView extends View {
     
 
     private void goBackToLastSavePoint() {
-        this.console.println("*** goBackToLastSavePoint Function called ***");
+                this.console.println("\n\nEnter the File Path for the game "
+                + "that is to be loaded."); 
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.loadGame(PathOfTheJedi.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     

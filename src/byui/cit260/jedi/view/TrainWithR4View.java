@@ -49,7 +49,7 @@ public class TrainWithR4View extends View {
                 this.forceAffinity();
                 break;
             case '6':
-                this.display();
+                this.returnToPrevious();
                 break;
             default:
                  ErrorView.display("TrainWithR4View",
@@ -78,6 +78,11 @@ public class TrainWithR4View extends View {
 
     private void forceAffinity() {
          this.console.println("*** Force Affinity Function called ***");
+    }
+
+    private void returnToPrevious() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
 
