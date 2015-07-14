@@ -25,6 +25,8 @@ public class GettingHelpView extends View {
             + "\n4 - How the Ship Works"
             + "\n5 - Credits"
             + "\n6 - Previous Menu"
+            + "\n7 - Inventory Report"
+            + "\n8 - Ship Control Report"
             + "\n---------------------------------------------");
             
     }
@@ -52,6 +54,9 @@ public class GettingHelpView extends View {
                 break;
             case '7':
                 this.inventoryReport();
+                break;
+            case '8':
+                this.shipControlReport();
                 break;
             case '6':
                 //How to call the function from MainMenuView to return the the other menu
@@ -98,6 +103,20 @@ public class GettingHelpView extends View {
         } catch (Exception ex) {
             ErrorView.display("GettingHelpView", ex.getMessage());
         }
+        this.console.println("\n\nYour report has been printed ");
+    }
+
+    private void shipControlReport() {
+        this.console.println("\n\nEnter the File Path for the report "
+                + "to be saved to."); 
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.shipControlReport(PathOfTheJedi.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GettingHelpView", ex.getMessage());
+        }
+        this.console.println("\n\nYour report has been printed ");
     }
 
     private void returnToPrevious() {
