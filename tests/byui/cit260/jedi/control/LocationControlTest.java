@@ -40,7 +40,7 @@ public class LocationControlTest {
         double enemyHP = 75.0;
         LocationControl instance = new LocationControl();
         double expResult = 1.0;
-        double result = instance.combatEnemy(userHP, enemyHP);
+        double result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -54,7 +54,7 @@ public class LocationControlTest {
         enemyHP = 75.0;
    
         expResult = -1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.        
          
@@ -67,7 +67,7 @@ public class LocationControlTest {
         enemyHP = 50.0;
    
         expResult = -1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -80,7 +80,7 @@ public class LocationControlTest {
         enemyHP = 15.0;
    
         expResult = -1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -93,7 +93,7 @@ public class LocationControlTest {
         enemyHP = 99.0;
    
         expResult = -1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -106,7 +106,7 @@ public class LocationControlTest {
         enemyHP = 1.0;
    
         expResult = 1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -119,7 +119,7 @@ public class LocationControlTest {
         enemyHP = 99.0;
    
         expResult = 1.0;
-        result = instance.combatEnemy(userHP, enemyHP);
+        result = instance.combatEnemy();
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
     }

@@ -6,7 +6,12 @@
 package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.GameControl;
+import byui.cit260.jedi.control.LocationControl;
+import byui.cit260.jedi.control.ShipControl;
+import byui.cit260.jedi.exceptions.LocationControlException;
 import byui.cit260.jedi.model.InventoryList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pathofthejedi.PathOfTheJedi;
 
 /**
@@ -25,10 +30,11 @@ public class GameMenuView extends View {
             + "\n3 - View Items in the Inventory"
             + "\n4 - View Crew or Allies"
             + "\n5 - Train with R4"
-            + "\n6 - Go To Ship"
-            + "\n7 - Save Game"
-            + "\n8 - Go back to last Save Point"
-            + "\n9 - Quit to Main Menu"
+            + "\n6 - Seek out Sith"
+            + "\n7 - Go To Ship"
+            + "\n8 - Save Game"
+            + "\n9 - Go back to last Save Point"
+            + "\n0 - Quit to Main Menu"
             + "\n---------------------------------------------");
      
 }
@@ -57,17 +63,27 @@ public class GameMenuView extends View {
                 this.trainWithR4();
                 break;
             case '6':
-                this.goToShip();
+        {
+            try {
+                this.battleScene();
+            } catch (LocationControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case '7':
-                this.saveGame();
+                this.goToShip();
                 break;
             case '8':
-                this.goBackToLastSavePoint();
+                this.saveGame();
                 break;
             case '9':
+                this.goBackToLastSavePoint();
+                break;
+            case '0':
                 this.returnToPrevious();
                 break;
+             
             default:
                 ErrorView.display("GameMenuVeiw",
                          "*** Invalid selection *** Try Again");
@@ -141,6 +157,11 @@ public class GameMenuView extends View {
     private void returnToPrevious() {
         MainMenuView mainView = new MainMenuView();
         mainView.display();
+    }
+
+    private void battleScene() throws LocationControlException {
+        LocationControl locationControl = new LocationControl();
+        locationControl.combatEnemy();
     }
 
     
