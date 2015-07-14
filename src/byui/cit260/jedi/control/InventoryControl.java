@@ -16,13 +16,17 @@ import pathofthejedi.PathOfTheJedi;
  */
 public class InventoryControl {
     
-    double mandalorianMetal = 2;
-    double synthCrystal = 4;
-    double hologramTraining;
-    String newLightsaber;
-    
     protected final BufferedReader keyboard = PathOfTheJedi.getInFile();
     protected final PrintWriter console = PathOfTheJedi.getOutFile();
+    
+    
+    double mandalorianMetal = 2;
+    double synthCrystal = 4;
+    double hologramTraining = 2;
+    String newLightsaber;
+    
+    
+    
     
     
     public String constructLightsaber() 
@@ -54,5 +58,12 @@ public class InventoryControl {
             
         
         } 
-         
+    public double InventoryList(){
+        this.console.println("You have " + mandalorianMetal + " Madalorian Mestal");
+        this.console.println("You have " + synthCrystal + " Synth Crystal");
+        this.console.println("You have " + hologramTraining + " Hologram Training");
+        
+        double newtotal = mandalorianMetal + synthCrystal + hologramTraining;
+        return newtotal;
+}
 }

@@ -6,6 +6,7 @@
 package byui.cit260.jedi.view;
 
 import byui.cit260.jedi.control.GameControl;
+import byui.cit260.jedi.control.InventoryControl;
 import byui.cit260.jedi.control.LocationControl;
 import byui.cit260.jedi.control.ShipControl;
 import byui.cit260.jedi.exceptions.LocationControlException;
@@ -106,7 +107,8 @@ public class GameMenuView extends View {
     }
 
     private void viewItemsInInventory() {
-        InventoryList inventorylist = new InventoryList();
+        InventoryControl inventorylist = new InventoryControl();
+        inventorylist.InventoryList();
     }
 
     private void viewCrewAndAllies() {
